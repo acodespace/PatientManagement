@@ -25,8 +25,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT SessionNum, SessionDate, PatienNum, LenthOfSession, TherapistID, TherapyCode FROM Patient";
-/* $sql = "SELECT SessionNum, SessionDate, PatienNum, LenthOfSession, TherapistID, TherapyCode FROM Patient WHERE (SessionNum > 32)"; */
+$sql = "SELECT SessionNum, SessionDate, PatientNum, LenthOfSession, TherapistID, TherapyCode FROM Patient";
+/* $sql = "SELECT SessionNum, SessionDate, PatientNum, LenthOfSession, TherapistID, TherapyCode FROM Patient WHERE (SessionNum > 32)"; */
 $result = $conn->query($sql);
 //var_dump($result);
 
@@ -36,7 +36,7 @@ if($result->num_rows > 0){
 			<tr>
 				<td>SessionNum</td>
 				<td>SessionDate</td>
-				<td>PatienNum</td>
+				<td>PatientNum</td>
 				<td>LenthOfSession</td>
 				<td>TherapistID</td>
 				<td>TherapyCode</td>";
@@ -47,7 +47,7 @@ if($result->num_rows > 0){
 		//echo "Num: " . $row["SessionNum"];
 		echo "<tr><td bgcolor=lightblue>$row[SessionNum]</td>
 		<td bgcolor=blue>$row[SessionDate]</td>
-		<td bgcolor=Green>$row[PatienNum]</td>
+		<td bgcolor=Green>$row[PatientNum]</td>
 		<td bgcolor=pink>$row[LenthOfSession]</td>
 		<td bgcolor=yellow>$row[TherapistID]</td>
 		<td bgcolor=brown>$row[TherapyCode]</td></tr>";		
@@ -57,8 +57,8 @@ if($result->num_rows > 0){
 }else{
 	echo "0 results";
 }
-/* $sql = "SELECT SessionNum, SessionDate, PatienNum, LenthOfSession, TherapistID, TherapyCode FROM Patient"; */
-$sql = "SELECT SessionNum, SessionDate, PatienNum, LenthOfSession, TherapistID, TherapyCode FROM Patient WHERE (SessionNum > 32) AND (LenthOfSession > 45)";
+/* $sql = "SELECT SessionNum, SessionDate, PatientNum, LenthOfSession, TherapistID, TherapyCode FROM Patient"; */
+$sql = "SELECT SessionNum, SessionDate, PatientNum, LenthOfSession, TherapistID, TherapyCode FROM Patient WHERE (SessionNum > 32) AND (LenthOfSession > 45)";
 $result = $conn->query($sql);
 if($result->num_rows > 0){
 	echo "<H1>Patients who have sessionNum greater than 32</H1>";
@@ -66,7 +66,7 @@ if($result->num_rows > 0){
 			<tr>
 				<td>SessionNum</td>
 				<td>SessionDate</td>
-				<td>PatienNum</td>
+				<td>PatientNum</td>
 				<td>LenthOfSession</td>
 				<td>TherapistID</td>
 				<td>TherapyCode</td>
@@ -80,7 +80,7 @@ if($result->num_rows > 0){
 		//echo "Num: " . $row["SessionNum"];
 		echo "<tr><td bgcolor=lightblue>$row[SessionNum]</td>
 		<td bgcolor=blue>$row[SessionDate]</td>
-		<td bgcolor=Green>$row[PatienNum]</td>
+		<td bgcolor=Green>$row[PatientNum]</td>
 		<td bgcolor=pink>$row[LenthOfSession]</td>
 		<td bgcolor=yellow>$row[TherapistID]</td>
 		<td bgcolor=brown>$row[TherapyCode]</td>
